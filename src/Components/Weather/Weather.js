@@ -37,21 +37,7 @@ class Weather extends Component {
                         speed: res.data.wind.speed.toFixed(0),
                         error: undefined,
                         border: false
-                    })
-
-
-                    // else {
-                    //     this.setState({
-                    //         name: undefined,
-                    //         country: undefined,
-                    //         description: undefined,
-                    //         id: undefined,
-                    //         temp: undefined,
-                    //         feels_like: undefined,
-                    //         speed: undefined,
-                    //         error: 'Enter a city!'
-                    //     })
-                    // }
+                    });
                     console.log(res.data)
                 }))
         } else {
