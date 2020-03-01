@@ -1,0 +1,50 @@
+.weatherWrapper{
+    position: relative;
+    background-image: url(../../images/weather/weatherWrapper.jpg);
+    background-size: cover;
+    /*background-color: #1848f4;*/
+    height: 1000px;
+    width: 95%;
+    margin: 0 auto;
+
+}
+.searchCityInput{
+    margin-left: 30px;
+    margin-top:30px;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+}
+.searchCityBtn {
+    height: 33px;
+    border-radius: 10px;
+    width: 80px;
+    background: #4b4949;
+    color: white;
+    font-weight: 600;
+}
+.wrapperCityDates {
+    text-align: center;
+}
+.cityName {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+
+}
+.mainImg {
+    height: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.timeValue {
+    position: absolute;
+    right: 23px;
+    top: 30px;
+    color: white;
+    font-weight: 600;
+}
