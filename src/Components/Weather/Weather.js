@@ -82,7 +82,6 @@ class Weather extends Component {
         return (
 
             <div className={style.weatherWrapper}>
-
                 {/*{!this.state.cityDates &&' loading...'}*/}
                 {/*{this.state.cityDates && <>*/}
                 <div className={style.dateValue}> {currentDate} </div>
@@ -122,13 +121,11 @@ class Weather extends Component {
                         <div className={style.description}> {this.state.speed && <> wind
                             speed: {this.state.speed} m/s </>}</div>
                     </div>
-
                     {/*</>*/}
                     {/*}*/}
                 </>}
                 <div className={style.cityName}> {this.state.error} </div>
             </div>
-
         );
     }
 }

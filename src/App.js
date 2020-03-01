@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
 import Weather from "./Components/Weather/Weather";
 import './App.css'
-import axios from "axios";
 import {Route} from "react-router-dom";
 
-//bcadf81ac18c65d589a0b694bcf27724
-
-
 class App extends Component {
-
 
 
     render() {
@@ -19,13 +14,10 @@ class App extends Component {
                         <a href='/weather'> Weather </a>
                     </div>
                 </header>
-
-
-                <div >
+                <div>
                     <Route path='/weather' render={() =>
-                        <Weather />}
-                          />
-
+                        <Weather/>}
+                    />
                 </div>
             </div>
         );
