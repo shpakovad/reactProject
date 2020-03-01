@@ -1,12 +1,12 @@
 .weatherWrapper{
     position: relative;
-    background-image: url(../../images/weather/weatherWrapper.jpg);
+    background: url(../../images/weather/0028e15fc950e36c359eca0b8ff76d9b.jpg) no-repeat center center;
     background-size: cover;
+    /*background-size: contain;*/
     /*background-color: #1848f4;*/
     height: 1000px;
     width: 95%;
     margin: 0 auto;
-
 }
 .searchCityInput{
     margin-left: 30px;
@@ -16,12 +16,23 @@
     border-radius: 10px;
     padding-left: 10px;
     margin-right: 20px;
+    margin-bottom: 50px;
+}
+.searchCityInputError {
+    margin-left: 30px;
+    margin-top:30px;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-right: 20px;
     margin-bottom: 40px;
+    border-color: red;
 }
 .searchCityBtn {
     height: 33px;
     border-radius: 10px;
-    width: 80px;
+    width: 100px;
     background: #4b4949;
     color: white;
     font-weight: 600;
@@ -31,10 +42,9 @@
 }
 .cityName {
     text-align: center;
-    font-size: 25px;
     font-weight: 700;
     color: white;
-
+    font-size: 40px;
 }
 .mainImg {
     height: 50px;
@@ -44,7 +54,26 @@
 .timeValue {
     position: absolute;
     right: 23px;
+    top: 60px;
+    color: white;
+    font-weight: 600;
+}
+.dateValue{
+    position: absolute;
+    right: 23px;
     top: 30px;
     color: white;
     font-weight: 600;
+}
+.temp {
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    padding-bottom: 15px;
+}
+.tempFeels, .description{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 15px;
 }
