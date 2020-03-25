@@ -2,30 +2,27 @@
     position: relative;
     background: url(../../images/weather/wrapperWeather.jpg) no-repeat center;
     background-size: cover;
-    height: 1000px;
+    height: 1350px;
     width: 95%;
     margin: 0 auto;
 }
 
-.searchCityInput {
-    margin-left: 30px;
-    margin-top: 50px;
-    width: 200px;
+.searchCityInput, .searchCityInputError {
+    margin-left: 3%;
+    margin-top: 5%;
+    width: 20%;
     height: 30px;
     border-radius: 10px;
-    padding-left: 10px;
-    margin-right: 20px;
-    margin-bottom: 100px;
+    padding-left: 1%;
+    margin-right: 2%;
+}
+
+
+.searchCityInput {
+    margin-bottom: 6%;
 }
 
 .searchCityInputError {
-    margin-left: 30px;
-    margin-top: 50px;
-    width: 200px;
-    height: 30px;
-    border-radius: 10px;
-    padding-left: 10px;
-    margin-right: 20px;
     margin-bottom: 40px;
     border-color: red;
 }
@@ -33,7 +30,7 @@
 .searchCityBtn {
     height: 33px;
     border-radius: 10px;
-    width: 100px;
+    width: 9%;
     background: #4b4949;
     color: white;
     font-weight: 600;
@@ -46,7 +43,7 @@
 .cityName {
     text-align: center;
     font-weight: 800;
-    font-size: 40px;
+    font-size: 250%;
 }
 
 .mainImg {
@@ -56,31 +53,89 @@
 }
 
 .timeValue {
-    position: absolute;
-    right: 23px;
-    top: 80px;
-    color: white;
-    font-weight: 600;
+    top: 8%;
 }
 
 .dateValue {
+    top: 5%;;
+}
+
+.timeValue, .dateValue {
     position: absolute;
-    right: 23px;
-    top: 50px;
+    right: 2%;
     color: white;
     font-weight: 600;
 }
 
+
 .temp {
     color: white;
-    font-size: 25px;
+    font-size: 190%;
     font-weight: 700;
-    padding-bottom: 15px;
+    padding-bottom: 2%;
 }
 
 .tempFeels, .description {
     color: white;
-    font-size: 20px;
+    font-size: 120%;
     font-weight: 600;
-    padding-bottom: 15px;
+    padding-bottom: 2%;
+}
+
+.textBtn {
+    font-size: 100%;
+}
+
+@media screen and (min-width: 1011px) and (max-width: 1102px) {
+    .textBtn {
+        font-size: 90%;
+    }
+}
+
+@media screen and (min-width: 920px) and (max-width: 1010px) {
+    .textBtn {
+        font-size: 80%;
+    }
+}
+
+@media screen and (min-width: 828px) and (max-width: 919px) {
+    .textBtn {
+        font-size: 70%;
+    }
+}
+
+@media screen and (min-width: 737px) and (max-width: 827px) {
+    .textBtn {
+        font-size: 60%;
+    }
+}
+
+@media screen and (min-width: 645px) and (max-width: 736px) {
+    .textBtn {
+        font-size: 50%;
+    }
+}
+
+@media screen and (min-width: 553px) and (max-width: 644px) {
+    .textBtn {
+        font-size: 40%;
+    }
+}
+
+@media screen and (min-width: 462px) and (max-width: 552px) {
+    .textBtn {
+        font-size: 30%;
+    }
+}
+
+@media screen and (min-width: 370px) and (max-width: 461px) {
+    .textBtn {
+        font-size: 20%;
+    }
+}
+
+@media screen and (min-width: 370px) and (max-width: 420px) {
+    .cityName {
+        font-size: 190%;
+    }
 }
