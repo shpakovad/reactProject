@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Weather from "./Components/Weather/Weather";
 import './App.css'
-import {Route} from "react-router-dom";
+import {NavLink, Route} from "react-router-dom";
+import News from "./Components/News/News";
 
 class App extends Component {
 
@@ -11,13 +12,13 @@ class App extends Component {
             <div className="App">
                 <header className='header'>
                     <div className='wrapperHeader'>
-                        <a href='/weather'> Weather </a>
+                        <NavLink to='/weather'> Weather </NavLink>
+                        <NavLink to='/news'> News </NavLink>
                     </div>
                 </header>
                 <div>
-                    <Route path='/weather' render={() =>
-                        <Weather/>}
-                    />
+                    <Route path='/weather' render={() => <Weather />} />
+                    <Route path='/news' render={() => <News />} />
                 </div>
             </div>
         );

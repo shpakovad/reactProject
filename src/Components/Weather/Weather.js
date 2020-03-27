@@ -17,9 +17,9 @@ const Weather = (props) => {
 
     const gettingWeather = (e) => {
         e.preventDefault();
-        let name = e.target.elements.city.value;
+        const name = e.target.elements.city.value;
         if (name) {
-            let API_KEY = 'bcadf81ac18c65d589a0b694bcf27724';
+            const API_KEY = 'bcadf81ac18c65d589a0b694bcf27724';
             axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${API_KEY}`)
                 .then((res => {
                     setName(res.data.name);
@@ -31,7 +31,6 @@ const Weather = (props) => {
                     setSpeed(res.data.wind.speed.toFixed(0));
                     setError(undefined);
                     setBorder(false);
-                    console.log(res.data)
                 }))
         } else {
             setName(undefined);
@@ -51,7 +50,7 @@ const Weather = (props) => {
 
     const date = new Date();
     const currentDate = date.getFullYear() + '-' + Number(date.getMonth() + 1) + '-' + date.getDate();
-    const time = date.getHours() + ':' + date.getMinutes();
+
 
     return (
 
@@ -59,7 +58,6 @@ const Weather = (props) => {
             {/*{!this.state.cityDates &&' loading...'}*/}
             {/*{this.state.cityDates && <>*/}
             <div className={style.dateValue}> {currentDate} </div>
-            <div className={style.timeValue}> {time} </div>
 
             <form onSubmit={gettingWeather}>
                 <input type='text' className={classForError} placeholder='Enter City...' name='city'/>
