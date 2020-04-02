@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Weather from "./Components/Weather/Weather";
 import './App.css'
-import {NavLink, Route} from "react-router-dom";
+import {BrowserRouter, NavLink, Route} from "react-router-dom";
 import News from "./Components/News/News";
 
 class App extends Component {
@@ -25,4 +25,11 @@ class App extends Component {
     }
 }
 
-export default App;
+// export default App;
+const MainApp = (props) =>{
+    return     <BrowserRouter>
+        <App />
+    </BrowserRouter>
+};
+
+export default MainApp
