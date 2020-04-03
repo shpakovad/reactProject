@@ -3,7 +3,7 @@ import style from './Weather.module.css'
 import axios from "axios";
 
 
-const Weather = (props) => {
+export default function Weather () {
 
     const [name, setName] = useState(undefined);
     const [country, setCountry] = useState(undefined);
@@ -101,4 +101,3 @@ const Weather = (props) => {
     );
 };
 
-export default Weather;
