@@ -59,7 +59,7 @@ export default function Weather () {
             {/*{this.state.cityDates && <>*/}
             <div className={style.dateValue}> {currentDate} </div>
 
-            <form onSubmit={gettingWeather}>
+            <form onSubmit={gettingWeather} data-test-id="increment">
                 <input type='text' className={classForError} placeholder='Enter City...' name='city'/>
                 < button className={style.searchCityBtn}><span className={style.textBtn}> Get Weather </span></button>
             </form>
