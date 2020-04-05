@@ -1,42 +1,31 @@
 import React, {Component} from "react";
-import axios from "axios";
 import style from "./News.module.css"
 import NewsItem from "./NewsItem";
-
-//pFpSg40feER6OKDiEgPgdLKM1TFaXD8k nytimes
-
+import {getNews} from "../../redux/reducers/newsReducer";
+import {connect} from "react-redux";
 
 class News extends Component {
 
-    state = {
-        results: [],
-    };
-
     getResults = (newResults) => {
-        this.setState({results: newResults})
+        this.props.getResults(newResults)
     };
 
     componentDidMount() {
-        const API_KEY = 'pFpSg40feER6OKDiEgPgdLKM1TFaXD8k';
-        axios.get(`https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${API_KEY}`)
-            .then((res => {
-
-                let newResults = res.data.results;
-                this.getResults(newResults);
-                console.log(newResults)
-            }))
+        this.getResults(this.props.results)
     }
 
     render() {
 
-        let news = this.state.results.map(item => {
+        const {results} = this.props;
+
+        let news = results.map(item => {
             return <NewsItem key={item.index} title={item.title} image={item.thumbnail_standard}
                              url={item.url}/>
         });
 
         return (
             <>
-                {this.state.results && <>
+                {results && <>
                     <div className={style.newsWrapper}>
                         {news}
                     </div>
@@ -46,4 +35,18 @@ class News extends Component {
     }
 }
 
-export default News;
+const mapStateToProps = (state) => {
+    return {
+        results: state.newsReducer.results
+    }
+};
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getResults(newResults) {
+            dispatch(getNews(newResults))
+        }
+    }
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(News)
