@@ -1,4 +1,4 @@
-import {api} from "../../api/newsApi";
+import {api} from '../../api/newsApi';
 
 export const RESULTS = "RESULTS";
 
@@ -27,6 +27,7 @@ export const getNews = () => {
             .then((res => {
                 let newResults = res.data.results;
                 dispatch(getResultsAC(newResults))
+                console.log(res)
             }))
     }
 };

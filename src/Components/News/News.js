@@ -1,8 +1,8 @@
-import React, {Component} from "react";
-import style from "./News.module.css"
-import NewsItem from "./NewsItem";
-import {getNews} from "../../redux/reducers/newsReducer";
-import {connect} from "react-redux";
+import React, {Component} from 'react';
+import style from './News.module.css';
+import NewsItem from './NewsItem';
+import {getNews} from '../../redux/reducers/newsReducer';
+import {connect} from 'react-redux';
 
 class News extends Component {
 

@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import style from './Weather.module.css'
-import axios from "axios";
+import style from './Weather.module.css';
+import axios from 'axios';
 
 
-export default function Weather () {
+export default function Weather() {
 
     const [name, setName] = useState(undefined);
     const [country, setCountry] = useState(undefined);
@@ -45,6 +45,29 @@ export default function Weather () {
         }
     };
 
+    const weatherImage = (type) => {
+        switch (type) {
+            case '1':
+                return <img src='http://openweathermap.org/img/wn/11d@2x.png' alt=''/>;
+            case '2':
+                return <img src='http://openweathermap.org/img/wn/09d@2x.png' alt=''/>;
+            case '3':
+                return <img src='http://openweathermap.org/img/wn/10d@2x.png' alt=''/>;
+            case '4':
+                return <img src='http://openweathermap.org/img/wn/13d@2x.png' alt=''/>;
+            case '5':
+                return <img src='http://openweathermap.org/img/wn/09d@2x.png' alt=''/>;
+            case '6':
+                return <img src='http://openweathermap.org/img/wn/13d@2x.png' alt=''/>;
+            case '7':
+                return <img src='http://openweathermap.org/img/wn/50d@2x.png' alt=''/>;
+            case '8':
+                return <img src='http://openweathermap.org/img/wn/01d@2x.png' alt=''/>;
+            case '9':
+                return <img src='http://openweathermap.org/img/wn/04d@2x.png' alt=''/>
+        }
+    };
+
 
     const classForError = border === true ? `${style.searchCityInputError}` : `${style.searchCityInput}`;
 
@@ -60,7 +83,7 @@ export default function Weather () {
             <div className={style.dateValue}> {currentDate} </div>
 
             <form onSubmit={gettingWeather} data-test-id="increment">
-                <input type='text' className={classForError} placeholder='Enter City...' name='city'/>
+                <input type='text' className={classForError} placeholder="Enter City..." name="city"/>
                 < button className={style.searchCityBtn}><span className={style.textBtn}> Get Weather </span></button>
             </form>
             {name && <>
@@ -71,24 +94,15 @@ export default function Weather () {
                         <div className={style.tempFeels}> feels like: {feels_like} °C</div>
                     </>}
 
-                    <div> {id >= 200 && id <= 232 &&
-                    <img src='http://openweathermap.org/img/wn/11d@2x.png' alt=''/>}  </div>
-                    <div> {id >= 300 && id <= 321 &&
-                    <img src='http://openweathermap.org/img/wn/09d@2x.png' alt=''/>}  </div>
-                    <div> {id >= 500 && id <= 504 &&
-                    <img src='http://openweathermap.org/img/wn/10d@2x.png' alt=''/>}  </div>
-                    <div> {id === 511 &&
-                    <img src='http://openweathermap.org/img/wn/13d@2x.png' alt=''/>}  </div>
-                    <div> {id >= 520 && id <= 531 &&
-                    <img src='http://openweathermap.org/img/wn/09d@2x.png' alt=''/>}  </div>
-                    <div> {id >= 600 && id <= 622 &&
-                    <img src='http://openweathermap.org/img/wn/13d@2x.png' alt=''/>}  </div>
-                    <div> {id >= 701 && id <= 781 &&
-                    <img src='http://openweathermap.org/img/wn/50d@2x.png' alt=''/>}  </div>
-                    <div> {id === 800 &&
-                    <img src='http://openweathermap.org/img/wn/01d@2x.png' alt=''/>}  </div>
-                    <div> {id >= 801 && id <= 804 &&
-                    <img src='http://openweathermap.org/img/wn/04d@2x.png' alt=''/>}  </div>
+                    <div> {id >= 200 && id <= 232 && weatherImage('1')}  </div>
+                    <div> {id >= 300 && id <= 321 && weatherImage('2')}  </div>
+                    <div> {id >= 500 && id <= 504 && weatherImage('3')}  </div>
+                    <div> {id === 511 && weatherImage('4')}  </div>
+                    <div> {id >= 520 && id <= 531 && weatherImage('5')}  </div>
+                    <div> {id >= 600 && id <= 622 && weatherImage('6')}  </div>
+                    <div> {id >= 701 && id <= 781 && weatherImage('7')}  </div>
+                    <div> {id === 800 && weatherImage('8')}  </div>
+                    <div> {id >= 801 && id <= 804 && weatherImage('9')}  </div>
                     <div className={style.description}> {description} </div>
                     <div className={style.description}> {speed && <> wind
                         speed: {speed} m/s </>}</div>
