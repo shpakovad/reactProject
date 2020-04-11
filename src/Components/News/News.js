@@ -37,7 +37,7 @@ class News extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        results: state.newsReducer.results
+        results: state.news.results
     }
 };
 const mapDispatchToProps = (dispatch) => {

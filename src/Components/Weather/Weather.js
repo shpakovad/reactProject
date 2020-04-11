@@ -18,6 +18,7 @@ export default function Weather() {
     const gettingWeather = (e) => {
         e.preventDefault();
         const name = e.target.elements.city.value;
+
         if (name) {
             const API_KEY = 'bcadf81ac18c65d589a0b694bcf27724';
             axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${API_KEY}`)
@@ -73,7 +74,6 @@ export default function Weather() {
 
     const date = new Date();
     const currentDate = date.getFullYear() + '-' + Number(date.getMonth() + 1) + '-' + date.getDate();
-
 
     return (
 
