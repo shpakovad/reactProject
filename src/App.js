@@ -6,7 +6,7 @@ import Weather from './Components/Weather/Weather';
 import './App.css';
 import News from './Components/News/News';
 import Videos from "./Components/Videos/Videos";
-import FoundVideo from "./Components/Videos/FoundVideo";
+
 
 class App extends Component {
 
