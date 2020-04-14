@@ -4,6 +4,7 @@ import axios from "axios";
 import FoundVideo from "./FoundVideo";
 import SearchInput from "./SearchInput";
 
+
 class Videos extends PureComponent {
 
     state = {
@@ -12,16 +13,15 @@ class Videos extends PureComponent {
         titlePopularVideos: "",
         popularVideos: null,
     };
+
     getTitlePopularVideos = (title, video) => {
         this.setState({titlePopularVideos: title, popularVideos: video})
     };
-    // getPopularVideos = (id) =>{
-    //     this.setState({idPopularVideos:id})
-    // };
 
     onChangedValue = (e) => {
         this.setState({addedValue: e.currentTarget.value});
     };
+
     addValue = () => {
         this.setState({resultValue: this.state.addedValue, addedValue: ''})
     };
@@ -34,10 +34,8 @@ class Videos extends PureComponent {
 
     componentDidMount() {
         let API_KEY = "AIzaSyA1ekIAkTGCDSz_MdhqrskiiL7LuhQxYqs";
-        axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&key=${API_KEY}`,
-            {withCredentials: true})
+        axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&key=${API_KEY}`)
             .then(res => {
-                console.log(res);
                 console.log(res.data.items);
                 this.getTitlePopularVideos(res.data.items.map(item => {
                     let urlImage = `https://www.youtube.com/embed/${item.id}?controls=2`;
@@ -55,33 +53,35 @@ class Videos extends PureComponent {
     render() {
 
         const {onChangedValue, addValue, onKeyPress} = this;
-         const {addedValue, resultValue,titlePopularVideos, popularVideos} = this.state;
+        const {addedValue, resultValue, titlePopularVideos, popularVideos} = this.state;
 
         return (
 
-                    <div className="wrapper-video">
+            <div className="wrapper-video">
 
-                        <SearchInput addValue={addValue}  onChangedValue={onChangedValue} onKeyPress={onKeyPress} addedValue={addedValue}  />
+                <SearchInput addValue={addValue} onChangedValue={onChangedValue} onKeyPress={onKeyPress}
+                             addedValue={addedValue}/>
 
-                        { resultValue === '' ? <>
-                                <div className="text-popular"> Popular:</div>
+                {resultValue === '' ? <>
+                        <div className="text-popular"> Popular:</div>
 
-                                { !titlePopularVideos && !popularVideos &&
-                                <div className="spinner-border text-danger spinner-place" role="status"></div>
-                                 }
-
-                                    <div className="videos">
-                                        <div>{titlePopularVideos} </div>
-                                        <div>{popularVideos}</div>
-                                    </div>
-                            </>
-                            :
-                            <FoundVideo resultValue={resultValue}/>
+                        {!titlePopularVideos && !popularVideos &&
+                        <div className="spinner-border text-danger spinner-place" role="status"></div>
                         }
-                    </div>
+
+                        <div className="videos">
+                            <div>{titlePopularVideos} </div>
+                            <div>{popularVideos}</div>
+                        </div>
+
+                    </>
+                    :
+
+                    <FoundVideo resultValue={resultValue}/>
+                }
+            </div>
         );
     }
 };
 
 export default Videos
-

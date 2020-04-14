@@ -1,5 +1,6 @@
 import React, {PureComponent} from "react";
 import "./Videos.css";
+import {NavLink} from "react-router-dom";
 
 class SearchInput extends PureComponent {
 
@@ -13,10 +14,8 @@ class SearchInput extends PureComponent {
                        onChange={onChangedValue}
                        onKeyPress={onKeyPress} value={addedValue}/>
                 <div className="input-group-append">
-                    <button className="btn btn-outline-secondary" type="button" id="button-addon2"
-                            onClick={addValue}>
-                        Search
-                    </button>
+                    <NavLink to={"/videos/found"} className="btn btn-outline-secondary" type="button" id="button-addon2"
+                            onClick={addValue}> Search </NavLink>
                 </div>
             </div>
         )
