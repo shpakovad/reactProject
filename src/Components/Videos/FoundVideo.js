@@ -1,16 +1,17 @@
-import React, {Component} from 'react';
-import './Videos.css';
-import './Videos.css';
+import React, {PureComponent} from "react";
+import "./Videos.css";
 
-class FoundVideo extends Component {
+class FoundVideo extends PureComponent {
 
     render() {
+
+        const {resultValue} = this.props;
 
         return (<>
                 <button className="btn btn-outline-secondary" type="button" id="button-addon2">
                     back to Videos page
                 </button>
-                <div className="text-resultValue">{this.props.resultValue}</div>
+                <div className="text-resultValue">{resultValue}</div>
             </>
         );
     }

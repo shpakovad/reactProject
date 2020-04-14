@@ -59,3 +59,8 @@
     color: red;
     font-weight: bold;
 }
+.spinner-place {
+    position: absolute;
+    top: 60%;
+    right: 50%;
+}

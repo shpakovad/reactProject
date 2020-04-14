@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import style from './Weather.module.css';
-import axios from 'axios';
+import React, {useState} from "react";
+import style from "./Weather.module.css";
+import axios from "axios";
 
 
 export default function Weather() {
@@ -20,7 +20,7 @@ export default function Weather() {
         const name = e.target.elements.city.value;
 
         if (name) {
-            const API_KEY = 'bcadf81ac18c65d589a0b694bcf27724';
+            const API_KEY = "bcadf81ac18c65d589a0b694bcf27724";
             axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${API_KEY}`)
                 .then((res => {
                     setName(res.data.name);
@@ -41,7 +41,7 @@ export default function Weather() {
             setTemp(undefined);
             setFeels_like(undefined);
             setSpeed(undefined);
-            setError('Enter the city!');
+            setError("Enter the city!");
             setBorder(true)
         }
     };
@@ -49,23 +49,23 @@ export default function Weather() {
     const weatherImage = (type) => {
         switch (type) {
             case '1':
-                return <img src='http://openweathermap.org/img/wn/11d@2x.png' alt=''/>;
+                return <img src="http://openweathermap.org/img/wn/11d@2x.png" alt=""/>;
             case '2':
-                return <img src='http://openweathermap.org/img/wn/09d@2x.png' alt=''/>;
+                return <img src="http://openweathermap.org/img/wn/09d@2x.png" alt=""/>;
             case '3':
-                return <img src='http://openweathermap.org/img/wn/10d@2x.png' alt=''/>;
+                return <img src="http://openweathermap.org/img/wn/10d@2x.png" alt=""/>;
             case '4':
-                return <img src='http://openweathermap.org/img/wn/13d@2x.png' alt=''/>;
+                return <img src="http://openweathermap.org/img/wn/13d@2x.png" alt=""/>;
             case '5':
-                return <img src='http://openweathermap.org/img/wn/09d@2x.png' alt=''/>;
+                return <img src="http://openweathermap.org/img/wn/09d@2x.png" alt=""/>;
             case '6':
-                return <img src='http://openweathermap.org/img/wn/13d@2x.png' alt=''/>;
+                return <img src="http://openweathermap.org/img/wn/13d@2x.png" alt=""/>;
             case '7':
-                return <img src='http://openweathermap.org/img/wn/50d@2x.png' alt=''/>;
+                return <img src="http://openweathermap.org/img/wn/50d@2x.png" alt=""/>;
             case '8':
-                return <img src='http://openweathermap.org/img/wn/01d@2x.png' alt=''/>;
+                return <img src="http://openweathermap.org/img/wn/01d@2x.png" alt=""/>;
             case '9':
-                return <img src='http://openweathermap.org/img/wn/04d@2x.png' alt=''/>
+                return <img src="http://openweathermap.org/img/wn/04d@2x.png" alt=""/>
         }
     };
 
@@ -78,13 +78,11 @@ export default function Weather() {
     return (
 
         <div className={style.weatherWrapper}>
-            {/*{!this.state.cityDates &&' loading...'}*/}
-            {/*{this.state.cityDates && <>*/}
             <div className={style.dateValue}> {currentDate} </div>
 
             <form onSubmit={gettingWeather} data-test-id="increment">
                 <input type='text' className={classForError} placeholder="Enter City..." name="city"/>
-                < button className={style.searchCityBtn}><span className={style.textBtn}> Get Weather </span></button>
+                < button className={style.searchCityBtn}> Get Weather </button>
             </form>
             {name && <>
                 <div className={style.wrapperCityDates}>
@@ -107,8 +105,6 @@ export default function Weather() {
                     <div className={style.description}> {speed && <> wind
                         speed: {speed} m/s </>}</div>
                 </div>
-                {/*</>*/}
-                {/*}*/}
             </>}
             <div className={style.cityName}> {error} </div>
         </div>

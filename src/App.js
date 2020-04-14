@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
-import {BrowserRouter, NavLink, Route} from 'react-router-dom';
-import {Provider} from 'react-redux';
-import store from './redux/store';
-import Weather from './Components/Weather/Weather';
-import './App.css';
-import News from './Components/News/News';
+import React, {PureComponent} from "react";
+import {BrowserRouter, NavLink, Route} from "react-router-dom";
+import {Provider} from "react-redux";
+import store from "./redux/store";
+import Weather from "./Components/Weather/Weather";
+import "./App.css";
+import News from "./Components/News/News";
 import Videos from "./Components/Videos/Videos";
 
 
-class App extends Component {
+class App extends PureComponent {
 
     render() {
         return (

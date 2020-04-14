@@ -1,10 +1,11 @@
-import React, {Component} from 'react';
-import style from './News.module.css';
-import NewsItem from './NewsItem';
-import {getNews} from '../../redux/reducers/newsReducer';
-import {connect} from 'react-redux';
+import React, {PureComponent} from "react";
+import NewsItem from "./NewsItem";
+import style from "./News.module.css";
+import {getNews} from "../../redux/reducers/newsReducer";
+import {connect} from "react-redux";
 
-class News extends Component {
+
+class News extends PureComponent {
 
     getResults = (newResults) => {
         this.props.getResults(newResults)
