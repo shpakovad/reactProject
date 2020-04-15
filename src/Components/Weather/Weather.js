@@ -23,17 +23,19 @@ export default function Weather() {
             const API_KEY = "bcadf81ac18c65d589a0b694bcf27724";
             axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${API_KEY}`)
                 .then((res => {
-                    setName(res.data.name);
+                        setName(res.data.name);
                     setCountry(res.data.sys.country);
                     setDescription(res.data.weather[0].description);
                     setId(res.data.weather[0].id);
                     setTemp((res.data.main.temp - 273.15).toFixed(0));
                     setFeels_like((res.data.main.feels_like - 273.15).toFixed(0));
                     setSpeed(res.data.wind.speed.toFixed(0));
-                    setError(undefined);
+                        setError(undefined);
                     setBorder(false);
                 }))
-        } else {
+        }
+        else {
+        setError("Enter the city!");
             setName(undefined);
             setCountry(undefined);
             setDescription(undefined);
@@ -41,7 +43,6 @@ export default function Weather() {
             setTemp(undefined);
             setFeels_like(undefined);
             setSpeed(undefined);
-            setError("Enter the city!");
             setBorder(true)
         }
     };
@@ -81,7 +82,7 @@ export default function Weather() {
             <div className={style.dateValue}> {currentDate} </div>
 
             <form onSubmit={gettingWeather} data-test-id="increment">
-                <input type='text' className={classForError} placeholder="Enter City..." name="city"/>
+                <input type='text' className={classForError} placeholder="Enter City..." name="city" />
                 < button className={style.searchCityBtn}> Get Weather </button>
             </form>
             {name && <>

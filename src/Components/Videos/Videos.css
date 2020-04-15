@@ -33,7 +33,7 @@
     text-align: center;
 }
 
-.wrapper-categories li, .title-popular-video {
+.wrapper-categories li, .title-popular-video, .title-found-video {
     list-style-type: none;
 }
 
@@ -60,9 +60,9 @@
 }
 
 .text-resultValue {
-    font-size: 200px;
+    font-family: 'Josefin Sans', sans-serif;
+    align-items: center;
     color: red;
-    font-weight: bold;
 }
 
 .spinner-place {

@@ -3,6 +3,8 @@ import "./Videos.css";
 import axios from "axios";
 import FoundVideo from "./FoundVideo";
 import SearchInput from "./SearchInput";
+import {NavLink, Route} from "react-router-dom";
+import News from "../News/News";
 
 
 class Videos extends PureComponent {
@@ -26,12 +28,6 @@ class Videos extends PureComponent {
         this.setState({resultValue: this.state.addedValue, addedValue: ''})
     };
 
-    onKeyPress = (e) => {
-        if (e.key === 'Enter') {
-            this.addValue()
-        }
-    };
-
     componentDidMount() {
         let API_KEY = "AIzaSyA1ekIAkTGCDSz_MdhqrskiiL7LuhQxYqs";
         axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&key=${API_KEY}`)
@@ -49,36 +45,29 @@ class Videos extends PureComponent {
             })
     }
 
-
     render() {
 
-        const {onChangedValue, addValue, onKeyPress} = this;
+        const {onChangedValue, addValue} = this;
         const {addedValue, resultValue, titlePopularVideos, popularVideos} = this.state;
 
         return (
 
             <div className="wrapper-video">
 
-                <SearchInput addValue={addValue} onChangedValue={onChangedValue} onKeyPress={onKeyPress}
-                             addedValue={addedValue}/>
+                <NavLink to="/videos_found"  className="btn btn-outline-secondary" type="button" id="button-addon2"> Search Videos </NavLink>
 
-                {resultValue === '' ? <>
+
+
                         <div className="text-popular"> Popular:</div>
 
                         {!titlePopularVideos && !popularVideos &&
                         <div className="spinner-border text-danger spinner-place" role="status"></div>
                         }
-
                         <div className="videos">
                             <div>{titlePopularVideos} </div>
                             <div>{popularVideos}</div>
                         </div>
 
-                    </>
-                    :
-
-                    <FoundVideo resultValue={resultValue}/>
-                }
             </div>
         );
     }
