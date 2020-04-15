@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ReactProject/static/css/main.99873945.chunk.css",
+    "main.js": "/ReactProject/static/js/main.22a3616c.chunk.js",
+    "main.js.map": "/ReactProject/static/js/main.22a3616c.chunk.js.map",
+    "runtime-main.js": "/ReactProject/static/js/runtime-main.9ee72d4d.js",
+    "runtime-main.js.map": "/ReactProject/static/js/runtime-main.9ee72d4d.js.map",
+    "static/js/2.daa44cf7.chunk.js": "/ReactProject/static/js/2.daa44cf7.chunk.js",
+    "static/js/2.daa44cf7.chunk.js.map": "/ReactProject/static/js/2.daa44cf7.chunk.js.map",
+    "index.html": "/ReactProject/index.html",
+    "precache-manifest.cd89647531d93f7729ba5bcbcff79389.js": "/ReactProject/precache-manifest.cd89647531d93f7729ba5bcbcff79389.js",
+    "service-worker.js": "/ReactProject/service-worker.js",
+    "static/css/main.99873945.chunk.css.map": "/ReactProject/static/css/main.99873945.chunk.css.map",
+    "static/js/2.daa44cf7.chunk.js.LICENSE.txt": "/ReactProject/static/js/2.daa44cf7.chunk.js.LICENSE.txt",
+    "static/media/News.module.css": "/ReactProject/static/media/newsWrapper.7e902781.jpg",
+    "static/media/nyt_logo.jpg": "/ReactProject/static/media/nyt_logo.8d5a2dd6.jpg",
+    "static/media/Weather.module.css": "/ReactProject/static/media/wrapperWeather.39270f03.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ee72d4d.js",
+    "static/js/2.daa44cf7.chunk.js",
+    "static/css/main.99873945.chunk.css",
+    "static/js/main.22a3616c.chunk.js"
+  ]
+}
