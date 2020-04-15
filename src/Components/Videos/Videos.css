@@ -70,3 +70,14 @@
     top: 60%;
     right: 50%;
 }
+.search-btn {
+    margin-top: 20px;
+}
+.sort-videos {
+    float: right;
+    width: 200px;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid #c5c3c3;
+    color: grey;
+}

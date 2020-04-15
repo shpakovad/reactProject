@@ -16,19 +16,20 @@ class FoundVideo extends PureComponent {
         this.setState({addedValue: e.currentTarget.value});
     };
 
-    addValue = (e) => {
-      e.preventDefault();
-             let API_KEY = "AIzaSyA1ekIAkTGCDSz_MdhqrskiiL7LuhQxYqs";
-            let foundVideo = e.target.elements.video.value;
-            if (foundVideo) {
-                axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=${foundVideo}&type=video&videoDefinition=any&key=${API_KEY}`)
-                    .then(res=>{
-                        console.log(res.data)
-                    })
-            } else {
-                console.log('error')
-            }
-        // this.setState({resultValue:this.state.addedValue,addedValue: ''});
+    addValue = () => {
+
+      // e.preventDefault();
+      //       const foundVideo = e.target.elements.video.value;
+      //       if (foundVideo) {
+      //           let API_KEY = "AIzaSyA1ekIAkTGCDSz_MdhqrskiiL7LuhQxYqs";
+      //           axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=${foundVideo}&type=video&videoDefinition=any&key=${API_KEY}`)
+      //               .then(res=>{
+      //                   console.log(res.data)
+      //               })
+      //       } else {
+      //           console.log('error')
+      //       }
+        this.setState({resultValue:this.state.addedValue,addedValue: ''});
     };
 
     // qaz(e) {
@@ -63,19 +64,26 @@ class FoundVideo extends PureComponent {
 
             <div className="wrapper-video">
 
-        <form onSubmit={this.addValue} data-test-id="increment">
-            <input type='text' name="video" />
-            < button > Search </button>
-        </form>
-            {/*    <div className="input-group mb-3 search-input" >*/}
-            {/*        <input type="text" className="form-control" aria-describedby="button-addon2"*/}
-            {/*               onChange={onChangedValue} value={addedValue} />*/}
-            {/*        <div className="input-group-append">*/}
-            {/*            <button  className="btn btn-outline-secondary" type="button" id="button-addon2"*/}
-            {/*                     onClick={addValue} > Search </button>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
+        {/*<form onSubmit={this.addValue} data-test-id="increment">*/}
+        {/*    <input type='text' name="video" />*/}
+        {/*    < button > Search </button>*/}
+        {/*</form>*/}
 
+                <div className="input-group mb-3 search-input" >
+                    <input type="text" className="form-control" aria-describedby="button-addon2"
+                           onChange={onChangedValue} value={addedValue} />
+                    <div className="input-group-append">
+                        <button  className="btn btn-outline-secondary" type="button" id="button-addon2"
+                                 onClick={addValue} > Search </button>
+                    </div>
+                </div>
+
+                <div >
+                    <select className="sort-videos">
+                        <option selected>Sort by...</option>
+                        <option>Name</option>
+                    </select>
+                </div>
 
             <div className="text-resultValue">{resultValue}</div>
             </div>

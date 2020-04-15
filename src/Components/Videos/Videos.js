@@ -54,7 +54,7 @@ class Videos extends PureComponent {
 
             <div className="wrapper-video">
 
-                <NavLink to="/videos_found"  className="btn btn-outline-secondary" type="button" id="button-addon2"> Search Videos </NavLink>
+                <NavLink to="/videos_found"  className="btn btn-outline-secondary search-btn" type="button" id="button-addon2"> Search Videos </NavLink>
 
 
 
