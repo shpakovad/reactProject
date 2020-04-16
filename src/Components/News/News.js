@@ -19,8 +19,8 @@ class News extends PureComponent {
 
         const {results} = this.props;
 
-        let news = results.map(item => {
-            return <NewsItem key={item.index} title={item.title} image={item.thumbnail_standard}
+        let news = results.map((item,index) => {
+            return <NewsItem key={index} title={item.title} image={item.thumbnail_standard}
                              url={item.url}/>
         });
 

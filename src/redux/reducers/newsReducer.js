@@ -1,6 +1,6 @@
 import {api} from '../../api/newsApi';
 
-export const RESULTS = "RESULTS";
+export const RESULTS = "api_data/news/RESULTS";
 
 const initialState = {
     results: [],
@@ -27,8 +27,8 @@ export const getNews = () => {
             .then((res => {
                 let newResults = res.data.results;
                 dispatch(getResultsAC(newResults))
-                console.log(res)
             }))
+            .catch(Error)
     }
 };
 
