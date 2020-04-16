@@ -1,6 +1,3 @@
-import {api} from "../../api/videosApi";
-import React from "react";
-
 export const FOUND_VIDEOS_LIST = "api_data/found-videos/FOUND-VIDEOS-LIST";
 
 

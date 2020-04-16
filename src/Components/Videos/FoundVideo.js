@@ -2,7 +2,6 @@ import React, {PureComponent} from "react";
 import "./Videos.css";
 import axios from "axios";
 import {withRouter} from "react-router-dom";
-import {getPopularVideosListTh} from "../../redux/reducers/videosReducer";
 import {connect} from "react-redux";
 import {getFoundVideosListAC} from "../../redux/reducers/foundVideosReducer";
 
@@ -33,11 +32,11 @@ class FoundVideo extends PureComponent {
 
                     });
                     this.props.getFoundVideosList(addedValue)
-                //    this.setState({resultValue: addedValue});
+                   // this.setState({resultValue: addedValue});
                 })
 
         } else {
-            console.log('Error')
+            console.log(Error)
         }
     };
 

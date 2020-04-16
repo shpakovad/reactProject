@@ -17,13 +17,14 @@ class App extends PureComponent {
             <div className="App">
                 <header className="header">
                     <div className="wrapperHeader">
+                        <NavLink to="/"> Main </NavLink>
                         <NavLink to="/news"> News </NavLink>
                         <NavLink to="/weather"> Weather </NavLink>
                         <NavLink to="/videos"> Videos </NavLink>
                     </div>
                 </header>
                 <div>
-                    <Route exact path='/' render={() => <Main/>}/>
+                    <Route exact path="/" render={() => <Main/>}/>
                     <Route path="/news" render={() => <News/>}/>
                     <Route path="/weather" render={() => <Weather/>}/>
                     <Route path="/videos" render={() => <Videos/>}/>
