@@ -2,6 +2,9 @@ import React, {PureComponent} from "react";
 import "./Videos.css";
 import axios from "axios";
 import {withRouter} from "react-router-dom";
+import {getPopularVideosListTh} from "../../redux/reducers/videosReducer";
+import {connect} from "react-redux";
+import {getFoundVideosListAC} from "../../redux/reducers/foundVideosReducer";
 
 
 class FoundVideo extends PureComponent {
@@ -29,7 +32,8 @@ class FoundVideo extends PureComponent {
                         </div>
 
                     });
-                    this.setState({resultValue: addedValue});
+                    this.props.getFoundVideosList(addedValue)
+                //    this.setState({resultValue: addedValue});
                 })
 
         } else {
@@ -39,7 +43,7 @@ class FoundVideo extends PureComponent {
 
     render() {
 
-        const {resultValue} = this.state;
+        const {foundVideos} = this.props;
 
         return (
             <div className="wrapper-video">
@@ -49,10 +53,24 @@ class FoundVideo extends PureComponent {
                         < button className="btn btn-outline-secondary" id="button-addon2"> Search</button>
                     </div>
                 </form>
-                <div className="text-resultValue">{resultValue}</div>
+                <div className="text-resultValue">{foundVideos}</div>
             </div>
         );
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        foundVideos: state.found_videos.foundVideos,
+    }
+};
 
-export default withRouter(FoundVideo)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getFoundVideosList (foundVideos) {
+            dispatch(getFoundVideosListAC (foundVideos))
+        }
+    }
+};
+
+const FoundVideoConnect = connect(mapStateToProps, mapDispatchToProps)(FoundVideo)
+export default withRouter(FoundVideoConnect)

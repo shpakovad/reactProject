@@ -16,6 +16,8 @@ const videosReducer = (state = initialState, action) => {
                 popularVideos: action.popularVideos,
             }
         }
+        default:
+            return state
     }
 };
 

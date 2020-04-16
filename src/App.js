@@ -7,6 +7,7 @@ import "./App.css";
 import News from "./Components/News/News";
 import Videos from "./Components/Videos/Videos";
 import FoundVideo from "./Components/Videos/FoundVideo";
+import Main from "./Components/Main/Main";
 
 
 class App extends PureComponent {
@@ -22,10 +23,11 @@ class App extends PureComponent {
                     </div>
                 </header>
                 <div>
+                    <Route exact path='/' render={() => <Main/>}/>
                     <Route path="/news" render={() => <News/>}/>
                     <Route path="/weather" render={() => <Weather/>}/>
                     <Route path="/videos" render={() => <Videos/>}/>
-                    <Route path="/videos_found" render={() =>  <FoundVideo />} />
+                    <Route path="/videos_found" render={() => <FoundVideo/>}/>
                 </div>
             </div>
         );
