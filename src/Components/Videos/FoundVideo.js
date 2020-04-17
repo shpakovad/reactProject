@@ -8,10 +8,6 @@ import {getFoundVideosListAC} from "../../redux/reducers/foundVideosReducer";
 
 class FoundVideo extends PureComponent {
 
-    state = {
-        resultValue: "",
-    };
-
     addValue = (e) => {
         e.preventDefault();
         const foundVideo = e.target.elements.video.value;
@@ -19,6 +15,7 @@ class FoundVideo extends PureComponent {
             let API_KEY = "AIzaSyA1ekIAkTGCDSz_MdhqrskiiL7LuhQxYqs";
             axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&order=viewCount&q=${foundVideo}&type=video&videoDefinition=any&key=${API_KEY}`)
                 .then(res => {
+                    console.log(res.data.items);
                     let addedValue = res.data.items.map((item, index) => {
                         let urlImage = `https://www.youtube.com/embed/${item.id}?controls=2`;
                         let text = item.snippet.title.replace(/&quot;/g, " ");
@@ -32,7 +29,6 @@ class FoundVideo extends PureComponent {
 
                     });
                     this.props.getFoundVideosList(addedValue)
-                   // this.setState({resultValue: addedValue});
                 })
 
         } else {
@@ -57,6 +53,7 @@ class FoundVideo extends PureComponent {
         );
     }
 }
+
 const mapStateToProps = (state) => {
     return {
         foundVideos: state.found_videos.foundVideos,
@@ -65,11 +62,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getFoundVideosList (foundVideos) {
-            dispatch(getFoundVideosListAC (foundVideos))
+        getFoundVideosList(foundVideos) {
+            dispatch(getFoundVideosListAC(foundVideos))
         }
     }
 };
 
-const FoundVideoConnect = connect(mapStateToProps, mapDispatchToProps)(FoundVideo)
+const FoundVideoConnect = connect(mapStateToProps, mapDispatchToProps)(FoundVideo);
 export default withRouter(FoundVideoConnect)

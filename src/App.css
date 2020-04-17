@@ -20,3 +20,7 @@ a {
     font-weight: 600;
     margin-right: 40px;
 }
+a:hover {
+    color: #09eaf5;
+    text-decoration: underline;
+}

@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
 }
 
 .wrapper-categories {
@@ -87,5 +87,12 @@
 }
 .title-found-video {
     text-align: center;
+}
+.views {
+    color: #636262;
+    margin-bottom: 10px;
+}
+.statistics {
+    color: #636262;
 }
 

@@ -14,7 +14,7 @@ class Videos extends PureComponent {
     render() {
 
         const {popularVideos} = this.props;
-
+        console.log(popularVideos);
         return (
             <div className="wrapper-video">
                 <NavLink to="/videos_found" className="btn btn-outline-secondary search-btn" type="button"
@@ -24,9 +24,11 @@ class Videos extends PureComponent {
                 {!popularVideos &&
                 <div className="spinner-border text-danger spinner-place" role="status"></div>
                 }
+
                 <div className="videos">
                     <div>{popularVideos}</div>
                 </div>
+
             </div>
         );
     }
