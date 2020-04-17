@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ReactProject/static/css/main.8b77b458.chunk.css",
-    "main.js": "/ReactProject/static/js/main.4ea69560.chunk.js",
-    "main.js.map": "/ReactProject/static/js/main.4ea69560.chunk.js.map",
+    "main.css": "/ReactProject/static/css/main.f9ec21cb.chunk.css",
+    "main.js": "/ReactProject/static/js/main.863f8f4d.chunk.js",
+    "main.js.map": "/ReactProject/static/js/main.863f8f4d.chunk.js.map",
     "runtime-main.js": "/ReactProject/static/js/runtime-main.9ee72d4d.js",
     "runtime-main.js.map": "/ReactProject/static/js/runtime-main.9ee72d4d.js.map",
     "static/js/2.76f6dd1a.chunk.js": "/ReactProject/static/js/2.76f6dd1a.chunk.js",
     "static/js/2.76f6dd1a.chunk.js.map": "/ReactProject/static/js/2.76f6dd1a.chunk.js.map",
     "index.html": "/ReactProject/index.html",
-    "precache-manifest.94add41206a93856940308bc407148c3.js": "/ReactProject/precache-manifest.94add41206a93856940308bc407148c3.js",
+    "precache-manifest.e165c9ce73b5a26e39b6017f9e6e0219.js": "/ReactProject/precache-manifest.e165c9ce73b5a26e39b6017f9e6e0219.js",
     "service-worker.js": "/ReactProject/service-worker.js",
-    "static/css/main.8b77b458.chunk.css.map": "/ReactProject/static/css/main.8b77b458.chunk.css.map",
+    "static/css/main.f9ec21cb.chunk.css.map": "/ReactProject/static/css/main.f9ec21cb.chunk.css.map",
     "static/js/2.76f6dd1a.chunk.js.LICENSE.txt": "/ReactProject/static/js/2.76f6dd1a.chunk.js.LICENSE.txt",
     "static/media/News.module.css": "/ReactProject/static/media/newsWrapper.7e902781.jpg",
     "static/media/nyt_logo.jpg": "/ReactProject/static/media/nyt_logo.8d5a2dd6.jpg",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.9ee72d4d.js",
     "static/js/2.76f6dd1a.chunk.js",
-    "static/css/main.8b77b458.chunk.css",
-    "static/js/main.4ea69560.chunk.js"
+    "static/css/main.f9ec21cb.chunk.css",
+    "static/js/main.863f8f4d.chunk.js"
   ]
 }
