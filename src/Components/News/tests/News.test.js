@@ -5,11 +5,10 @@ import NewsItem from "../NewsItem";
 
 describe('News Component', () => {
     // test('should be result', () => {
-    //     const component =   create(
-    //         <Provider store={store} >
-    //             <App results ={[]} />
-    //         </Provider>
-    //     )
+    //     debugger
+    //     const component = renderer.create(
+    //             <News results ={[]} />
+    //     );
     //     debugger
     //     const instance = component.getInstance();
     //     expect(instance).toStrictEqual([]);
