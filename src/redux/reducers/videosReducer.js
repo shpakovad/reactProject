@@ -32,16 +32,9 @@ export const getPopularVideosListTh = () => {
                 console.log(res.data.items);
                 const popularVideos = res.data.items.map(item => {
                     let urlImage = `https://www.youtube.com/embed/${item.id}?controls=2`;
-                    return <div className="item-wrapper" key={item.id}>
-                        <li className="title-popular-video">
-                            <div className="wrapper-title-video"><span> {item.snippet.title} </span></div>
-                            <iframe width="300" height="200" src={urlImage} frameBorder="0" title="myFrame"></iframe>
-                            <div className="views"> views: {item.statistics.viewCount} </div>
-                            <div className="statistics">
-                                <div> like: {item.statistics.likeCount}  </div>
-                              <div> dislike: {item.statistics.dislikeCount}  </div>
-                            </div>
-                        </li>
+                    return <div className="item-wrapper" key={item.id} title={item.snippet.title} urlImage={urlImage}
+                                views={item.statistics.viewCount} like={item.statistics.likeCount}
+                                dislike={item.statistics.dislikeCount}>
                     </div>
                 });
                 dispatch(getPopularVideosListAC(popularVideos));

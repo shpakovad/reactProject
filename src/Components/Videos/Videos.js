@@ -14,7 +14,7 @@ class Videos extends PureComponent {
     render() {
 
         const {popularVideos} = this.props;
-        console.log(popularVideos);
+
         return (
             <div className="wrapper-video">
                 <NavLink to="/videos_found" className="btn btn-outline-secondary search-btn" type="button"
@@ -26,12 +26,32 @@ class Videos extends PureComponent {
                 }
 
                 <div className="videos">
-                    <div>{popularVideos}</div>
+                    <div className="item-wrapper">
+                        {popularVideos.map((videoItem, index) => {
+                            return <VideosItem key={index} title={videoItem.props.title} src={videoItem.props.urlImage}
+                                               views={videoItem.props.views} like={videoItem.props.like}
+                                               dislike={videoItem.props.dislike}/>
+                        })}
+                    </div>
                 </div>
 
             </div>
         );
     }
+}
+
+const VideosItem = (props) => {
+    return (
+        <li className="title-popular-video">
+            <div className="wrapper-title-video"><span> {props.title} </span></div>
+            <iframe width="300" height="200" src={props.src} frameBorder="0" title="myFrame"></iframe>
+            <div className="views"> views: {props.views} </div>
+            <div className="statistics">
+                <div> like: {props.like}  </div>
+                <div> dislike: {props.dislike}  </div>
+            </div>
+        </li>
+    )
 };
 
 const mapStateToProps = (state) => {

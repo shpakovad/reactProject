@@ -32,7 +32,7 @@ class FoundVideo extends PureComponent {
                 })
 
         } else {
-            console.log(Error)
+            throw Error
         }
     };
 

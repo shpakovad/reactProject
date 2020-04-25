@@ -7,6 +7,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 20px;
 }
 
 .item-wrapper {
@@ -67,9 +68,11 @@
     top: 60%;
     right: 50%;
 }
+
 .search-btn {
     margin-top: 20px;
 }
+
 .sort-videos {
     float: right;
     width: 200px;
@@ -78,20 +81,25 @@
     border: 1px solid #c5c3c3;
     color: grey;
 }
+
 .form-control, .btn-outline-secondary {
     margin-bottom: 3%;
 }
+
 .frame-video {
     margin-bottom: 4%;
     margin-top: 2%;
 }
+
 .title-found-video {
     text-align: center;
 }
+
 .views {
     color: #636262;
     margin-bottom: 10px;
 }
+
 .statistics {
     color: #636262;
 }
