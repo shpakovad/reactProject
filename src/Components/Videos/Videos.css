@@ -103,4 +103,8 @@
 .statistics {
     color: #636262;
 }
+.sortForm {
+    float: right;
+    margin-top:2%;
+}
 
