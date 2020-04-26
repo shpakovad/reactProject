@@ -103,8 +103,13 @@
 .statistics {
     color: #636262;
 }
-.sortForm {
+.sorted-block {
     float: right;
-    margin-top:2%;
+    margin-top: 1.5%;
+}
+.sorted-title {
+    padding-right: 10px;
+    font-weight: 700;
+    color: darkslategray;
 }
 
